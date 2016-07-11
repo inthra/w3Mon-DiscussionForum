@@ -16,12 +16,13 @@
         android:textSize="40dp"
         android:layout_margin="10dp"
         android:id="@+id/title"
-        android:text="Hello Woman" />
+        android:text="Developer Forum" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title"
+        android:layout_above="@+id/addCategoryButton"
         android:id="@+id/recyclerView"/>
 
     <Button
