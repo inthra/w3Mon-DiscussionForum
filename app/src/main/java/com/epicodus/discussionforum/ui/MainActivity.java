@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        mCategoryReference = FirebaseDatabase.getInstance().getReference("categories");
+        mCategoryReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CATEGORY);
         setUpFirebaseAdapter();
 
         mAddCategoryButton.setOnClickListener(this);
