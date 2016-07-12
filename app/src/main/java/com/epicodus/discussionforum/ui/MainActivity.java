@@ -26,7 +26,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference mCategoryReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
-//    private ValueEventListener mCategoryReferenceListener;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.addCategoryButton) Button mAddCategoryButton;
@@ -37,28 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        mCategoryReference = FirebaseDatabase
-//                .getInstance()
-//                .getReference()
-//                .child(Constants.FIREBASE_CHILD_CATEGORY);
-//
-//        mCategoryReferenceListener = mCategoryReference.addValueEventListener(new ValueEventListener() {
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot categorySnapshot : dataSnapshot.getChildren()) {
-//                    String category = categorySnapshot.getValue().toString();
-//                    Log.d("Categories updated", "category: " + category);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
 
-        mCategoryReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CATEGORY);
+
+        mCategoryReference = FirebaseDatabase.getInstance().getReference("categories");
         setUpFirebaseAdapter();
 
         mAddCategoryButton.setOnClickListener(this);

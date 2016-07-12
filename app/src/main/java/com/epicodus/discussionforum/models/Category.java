@@ -7,6 +7,8 @@ public class Category {
     String title;
     List<Question> questions = new ArrayList<>();
 
+    public Category() {}
+
     public Category(String title, ArrayList<Question> questions) {
         this.title = title;
         this.questions = questions;

@@ -8,8 +8,12 @@ import android.widget.EditText;
 
 import com.epicodus.discussionforum.Constants;
 import com.epicodus.discussionforum.R;
+import com.epicodus.discussionforum.models.Category;
+import com.epicodus.discussionforum.models.Question;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,7 +26,7 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mCategoryReference = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_CATEGORY);
+        mCategoryReference = FirebaseDatabase.getInstance().getReference("categories");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
         ButterKnife.bind(this);
@@ -34,11 +38,12 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View view) {
         if(view == mAddCategoryButton) {
             String newCategory = mCategoryNameInput.getText().toString();
-            saveCategoryToFirebase(newCategory);
+            Category category = new Category(newCategory, new ArrayList<Question>());
+            saveCategoryToFirebase(category);
         }
     }
 
-    public void saveCategoryToFirebase(String newCategory) {
+    public void saveCategoryToFirebase(Category newCategory) {
         mCategoryReference.push().setValue(newCategory);
     }
 }
