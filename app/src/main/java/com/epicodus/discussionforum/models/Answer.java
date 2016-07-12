@@ -7,8 +7,21 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Answer {
-    String answer;
+    String postedAnswer;
     String username;
 
     public Answer() {}
+
+    public Answer(String postedAnswer, String username) {
+        this.postedAnswer = postedAnswer;
+        this.username = username;
+    }
+
+    public String getAnswer() {
+        return postedAnswer;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }

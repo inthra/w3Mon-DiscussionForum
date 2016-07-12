@@ -10,9 +10,26 @@ import java.util.List;
  */
 @Parcel
 public class Question {
-    String question;
+    String postedQuestion;
     String username;
     List<Answer> answers = new ArrayList<>();
 
     public Question() {}
+
+    public Question(String postedQuestion, String username, ArrayList<Answer> answers) {
+        this.postedQuestion = postedQuestion;
+        this.answers = answers;
+    }
+
+    public String getQuestion() {
+        return postedQuestion;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
 }

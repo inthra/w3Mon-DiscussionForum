@@ -17,4 +17,21 @@
         android:id="@+id/categoryTitle"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        android:layout_above="@+id/addQuestionButton"
+        android:layout_below="@+id/categoryTitle" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add A Question"
+        android:id="@+id/addQuestionButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

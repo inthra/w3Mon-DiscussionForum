@@ -27,7 +27,7 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mCategoryReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CATEGORY);
+        mCategoryReference = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_CATEGORY);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
         ButterKnife.bind(this);

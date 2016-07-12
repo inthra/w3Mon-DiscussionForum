@@ -9,6 +9,7 @@ import java.util.List;
 public class Category {
     String title;
     List<Question> questions = new ArrayList<>();
+    String categoryId;
 
     public Category() {}
 
@@ -24,4 +25,6 @@ public class Category {
     public List<Question> getQuestions() {
         return questions;
     }
+
+    public String getCategoryId() { return categoryId; }
 }
