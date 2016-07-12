@@ -14,8 +14,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="CategoryQuestions"
-        android:id="@+id/textView2"
+        android:id="@+id/categoryTitle"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
