@@ -1,5 +1,6 @@
 package com.epicodus.discussionforum.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,9 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
             String newCategory = mCategoryNameInput.getText().toString();
             Category category = new Category(newCategory, new ArrayList<Question>());
             saveCategoryToFirebase(category);
+
+            Intent intent = new Intent(AddCategoryActivity.this, MainActivity.class);
+            startActivity(intent);
         }
     }
 
