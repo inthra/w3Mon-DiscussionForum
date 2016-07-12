@@ -1,7 +1,9 @@
 package com.epicodus.discussionforum.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 
 import com.epicodus.discussionforum.R;
 import com.epicodus.discussionforum.models.Category;
+import com.epicodus.discussionforum.ui.CategoryQuestionsActivity;
 
 import java.util.ArrayList;
 
@@ -44,19 +47,28 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         return mCategories.size();
     }
 
-    public class CategoryViewHolder extends RecyclerView.ViewHolder {
+    public class CategoryViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/ {
         @Bind(R.id.titleTextView) TextView mTitleTextView;
 
-        private Context mContext;
+        //Commented code is not necessary after implementing firebase, i think
+//        private Context mContext;
 
         public CategoryViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            mContext = itemView.getContext();
+//            mContext = itemView.getContext();
+//            itemView.setOnClickListener(this);
         }
 
         public void bindCategory (Category category) {
             mTitleTextView.setText(category.getTitle());
         }
+
+//        @Override
+//        public void onClick (View view) {
+//            Log.d("list adapter", "click");
+//            Intent intent = new Intent(mContext, CategoryQuestionsActivity.class);
+//            mContext.startActivity(intent);
+//        }
     }
 }

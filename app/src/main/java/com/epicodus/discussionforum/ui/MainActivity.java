@@ -46,12 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setUpFirebaseAdapter() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Category, FirebaseCategoryViewHolder>
-                (Category.class, R.layout.category_list_item, FirebaseCategoryViewHolder.class,
-                        mCategoryReference) {
+                (Category.class, R.layout.category_list_item, FirebaseCategoryViewHolder.class, mCategoryReference) {
 
             @Override
-            protected void populateViewHolder(FirebaseCategoryViewHolder viewHolder,
-                                              Category model, int position) {
+            protected void populateViewHolder(FirebaseCategoryViewHolder viewHolder, Category model, int position) {
                 viewHolder.bindCategory(model);
             }
         };
