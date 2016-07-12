@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.parceler.Parcels;
+
 import java.util.ArrayList;
 
 /**
@@ -56,8 +58,8 @@ public class FirebaseCategoryViewHolder extends RecyclerView.ViewHolder implemen
                 int itemPosition = getLayoutPosition();
 
                 Intent intent = new Intent(mContext, CategoryQuestionsActivity.class);
-//                intent.putExtra("position", itemPosition + "");
-//                intent.putExtra("restaurants", Parcels.wrap(restaurants));
+                intent.putExtra("position", itemPosition + "");
+                intent.putExtra("categories", Parcels.wrap(categories));
 
                 mContext.startActivity(intent);
             }

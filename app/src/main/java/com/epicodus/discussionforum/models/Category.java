@@ -1,8 +1,11 @@
 package com.epicodus.discussionforum.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Category {
     String title;
     List<Question> questions = new ArrayList<>();
